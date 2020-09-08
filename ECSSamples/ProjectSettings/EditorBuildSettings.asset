@@ -20,10 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/HelloCube/6. SpawnAndRemove/SpawnAndRemove.unity
     guid: ef0afe639440d864e9719319a895e42f
-  - enabled: 1
+  - enabled: 0
     path: Assets/HelloCube/7.RotationAndMovement/RotationAndMovement.unity
     guid: e7e26fc5523733740be49ab3f2e82b83
-  - enabled: 0
+  - enabled: 1
     path: Assets/HelloCube/8.ClassicRotationAndMovement/ClassicRotationAndMovement.unity
     guid: c860dd67942e4304bb2ead21314ee6a6
   m_configObjects: {}

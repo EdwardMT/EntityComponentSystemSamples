@@ -38,6 +38,7 @@ public class ClassicSpawner : MonoBehaviour
 
     public void Update()
     {
+        var random = new Random(2);
         for (var i = 0; i < _objects.Count; ++i)
         {
             var trans = _objects[i].transform;
@@ -46,10 +47,19 @@ public class ClassicSpawner : MonoBehaviour
                 quaternion.AxisAngle(math.up(), _rotationSpeed[i] * Time.deltaTime));
 
             var pos = trans.position;
-            if (pos.x > 110)
-                pos = new Vector3(-10.0f, pos.y, pos.z);
 
-            trans.position = new Vector3(pos.x + Time.deltaTime * _movementSpeed[i], pos.y, pos.z);
+            if (pos.x > 200)
+                pos.x = -50;
+            if (pos.x < -50)
+                pos.x = 200;
+            if (pos.z > 200)
+                pos.z = -50;
+            if (pos.z < -50)
+                pos.z = 200;
+
+            trans.position =
+                new Vector3(pos.x + Time.deltaTime * _movementSpeed[i] * math.cos(random.NextFloat(0.0f, 10.0f)), pos.y,
+                    pos.z + Time.deltaTime * _movementSpeed[i] * math.sin(random.NextFloat(0.0f, 10.0f)));
         }
     }
 }
